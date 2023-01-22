@@ -34,6 +34,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
    // Retorna el arreglo.
    // Tu código:
    array.push(elemento);
+   return array;
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
@@ -41,6 +42,7 @@ function agregarItemAlComienzoDelArray(array, elemento) {
    // Retorna el arreglo.
    // Tu código:
    array.unshift(elemento);
+   return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -72,6 +74,7 @@ function agregarNumeros(arrayOfNums) {
    for (var i = 0; i < arrayOfNums.length; i++) {
       suma += arrayOfNums[i];
    }
+   return suma;
 }
 
 function promedioResultadosTest(resultadosTest) {
@@ -82,6 +85,7 @@ function promedioResultadosTest(resultadosTest) {
    for (var i = 0; i < resultadosTest.length; i++) {
       promedio += resultadosTest[i];
    }
+   return promedio / resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
@@ -94,6 +98,7 @@ function numeroMasGrande(arrayOfNums) {
          masGrande = arrayOfNums[i];
       }
    }
+   return masGrande;
 }
 
 function multiplicarArgumentos() {
@@ -104,6 +109,11 @@ function multiplicarArgumentos() {
    var producto = 1;
    for (var i = 0; i < arguments.length; i++) {
       producto *= arguments[i];
+   }
+   if (arguments == null){
+      return 0;
+   }else{
+      return producto;
    }
 }
 
@@ -131,16 +141,17 @@ function diaDeLaSemana(numeroDeDia) {
    } else {
       return "Sábado";
    }
+
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar True si el entero inicia con 9 y False en otro caso.
    // Tu código:
-   if (num == 9) {
-      return true;
-   } else {
+   if (num != 9) {
       return false;
+   } else {
+      return true;
    }
 }
 
@@ -162,6 +173,12 @@ function mesesDelAño(array) {
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
    var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+   var mesesPedidos = [];
+   for (var i = 0; i < meses.length; i++) {
+      if (array.indexOf(meses[i])!= -1) {
+         mesesPedidos.push(meses[i]);
+      }
+   }
 
 }
 
@@ -170,7 +187,7 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    var tabla = [];
-   for (var i = 0; i <= 60; i++) {
+   for (var i = 0; i <= 10; i++) {
       tabla.push(i * 6);
    }
    return tabla;
@@ -208,6 +225,7 @@ function breakStatement(num) {
       }
    }
    if (suma == num) {}
+   return "Se interrumpió la ejecución";
 }
 
 function continueStatement(num) {
