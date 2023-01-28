@@ -122,7 +122,7 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
-   objetoUsuario.posts.every(function(objetoPost) {
+   objetoUsuario.posts.log(function(objetoPost) {
       objetoPost.likes = objetoPost.likes + 1;
    });
    return objetoUsuario;

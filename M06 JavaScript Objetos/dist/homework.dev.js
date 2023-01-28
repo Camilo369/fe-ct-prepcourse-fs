@@ -104,6 +104,7 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
   return objetoUsuario;
 }
 
+
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
   // El parámetro "objetoMuchosUsuarios" es un arreglo de objetos (usuarios).
   // Cada usuario tiene una propiedad llamada "esPremium".
@@ -122,13 +123,15 @@ function sumarLikesDeUsuario(objetoUsuario) {
   // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
   // Debes sumar los likes de todos los post y retornar el resultado.
   // Tu código:
-  objetoUsuario.posts.every(function (objetoPost) {
+  objetoUsuario.posts.forEach(function (objetoPost) {
     objetoPost.likes = objetoPost.likes + 1;
   });
   return objetoUsuario;
 }
 
-function agregarMetodoCalculoDescuento(objetoProducto) {} // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".
+
+function agregarMetodoCalculoDescuento(objetoProducto) {
+ // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".
 // Esta propiedad debe ser una función que multiplique el precio del producto por el porcentajeDeDescuento.
 // El "objetoProducto" posee una propiedad "precio" y una propiedad "porcentajeDeDescuento".
 // Luego debes restar del precio total del producto ese valor de descuento.
@@ -138,6 +141,17 @@ function agregarMetodoCalculoDescuento(objetoProducto) {} // Agrega una propieda
 // PorcentajeDeDescuento ---> 0.2
 // Precio final ---> 8
 // Tu código:
+objetoProducto.calcularPrecioDescuento = function (precio, porcentajeDeDescuento){
+  return precio * (100 - porcentajeDeDescuento) / 100;
+}
+}
+
+function invocarMetodo(objeto, metodo) {
+  // El parámetro "objeto" tiene una propiedad llamada "metodos" igual a un arreglo.
+  // Debes invocar el "metodo" del "objeto" y retornar el resultado.
+  // Tu código:
+  return objeto[metodo]();
+}
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 
